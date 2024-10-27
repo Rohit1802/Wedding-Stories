@@ -30,9 +30,9 @@ const Navbar = () => {
 
         {/* Right Side Desktop Navigation Screen*/}
         <div className="hidden md:flex space-x-8">
-          <Link href="/" className="hover:text-purple-600 transition-colors">PHOTOGRAPHY</Link>
-          <Link href="/" className="hover:text-purple-600 transition-colors">FILMS</Link>
-          <Link href="/" className="hover:text-purple-600 transition-colors">PRE-WEDDINGS</Link>
+          <Link href="/stories" className="hover:text-purple-600 transition-colors">STORIES</Link>
+          <Link href="/films" className="hover:text-purple-600 transition-colors">FILMS</Link>
+          <Link href="/pre-weddings" className="hover:text-purple-600 transition-colors">PRE-WEDDINGS</Link>
           <div className="relative">
             <button
               onClick={toggleDropdown}
@@ -49,7 +49,7 @@ const Navbar = () => {
               </div>
             )}
           </div>
-          <Link href="/" className="hover:text-purple-600 transition-colors">CONTACT</Link>
+          <Link href="/contact" className="hover:text-purple-600 transition-colors">CONTACT</Link>
         </div>
 
         {/* Toggler */}
@@ -68,9 +68,9 @@ const Navbar = () => {
             </button>
             <div className="flex flex-col items-center mt-4 space-y-4"> 
               <Link href="/" className="text-lg hover:text-purple-600 transition-colors">Photography</Link>
-              <Link href="/" className="text-lg hover:text-purple-600 transition-colors">Films</Link>
-              <Link href="/" className="text-lg hover:text-purple-600 transition-colors">Pre-Weddings</Link>
-                <Link href="/" className="text-lg hover:text-purple-600 transition-colors">Contact</Link>
+              <Link href="/films" className="text-lg hover:text-purple-600 transition-colors">Films</Link>
+              <Link href="/pre-weddings" className="text-lg hover:text-purple-600 transition-colors">Pre-Weddings</Link>
+                <Link href="/contact" className="text-lg hover:text-purple-600 transition-colors">Contact</Link>
               <div className="relative">
                 <button onClick={toggleDropdown} className="flex items-center text-lg hover:text-purple-600 transition-colors">
                   <span>More</span>
