@@ -25,13 +25,13 @@ const Navbar = () => {
 
   return (
     <nav className="bg-primary text-gray-800 shadow-lg">
-      <div className="flex justify-between items-center p-6 max-w-screen-xl mx-auto w-full">
+      <div className="flex justify-between items-center max-w-screen-xl mx-auto w-full">
         {/* Left */}
         <Image
-          src="/images/weddingLogo.png"
+          src="/images/tei-removebg-preview.png"
           alt="Wedding Logo"
-          width={150}
-          height={150}
+          width={120}
+          height={120}
         />
 
         {/* Right Side Desktop Navigation Screen */}
