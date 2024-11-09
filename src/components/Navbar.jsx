@@ -69,19 +69,19 @@ const Navbar = () => {
             {isDropdownOpen && (
               <div className="absolute  text-gray-500 py-2 mt-4 left-1/2 transform -translate-x-1/2 z-10 bg-white rounded shadow-lg w-48">
                 <Link
-                  href="/"
+                  href="https://third-eye-illusion-media-21071.pixellu.gallery/wedding-samples"
                   className="tracking-wider text-gray-500 block text-sm px-4 py-2 hover:bg-gray-200  hover:text-gray-700 transition-colors"
                 >
                   WEDDING SAMPLES
                 </Link>
                 <Link
-                  href="/"
+                  href="https://third-eye-illusion-media-21071.pixellu.gallery/insta-highlights-by-third-eye-illusuion"
                   className="tracking-wider text-gray-500 block text-sm px-4 py-2 hover:bg-gray-200 hover:text-gray-700 transition-colors"
                 >
                   INSTA HIGHLIGHTS
                 </Link>
                 <Link
-                  href="/"
+                  href="https://third-eye-illusion-media-21071.pixellu.gallery/album-sample-third-eye-illusion-media "
                   className="tracking-wider block text-sm px-4 py-2 hover:bg-gray-200 hover:text-gray-700 transition-colors"
                 >
                   ALBUM SAMPLES
@@ -198,19 +198,19 @@ const Navbar = () => {
                 {isDropdownOpen && (
                   <div className="absolute p-2 left-1/2 transform -translate-x-1/2 flex flex-col space-y-2 bg-white mt-2 rounded w-64">
                     <Link
-                      href="/"
+                      href="https://third-eye-illusion-media-21071.pixellu.gallery/wedding-samples"
                       className="tracking-wider hover:bg-gray-200 px-2 py-1 transition-colors"
                     >
                       WEDDING SAMPLES
                     </Link>
                     <Link
-                      href="/"
+                      href="https://third-eye-illusion-media-21071.pixellu.gallery/insta-highlights-by-third-eye-illusuion"
                       className="tracking-wider hover:bg-gray-200 px-2 py-1 transition-colors"
                     >
                       INSTA HIGHLIGHTS
                     </Link>
                     <Link
-                      href="/"
+                      href="https://third-eye-illusion-media-21071.pixellu.gallery/album-sample-third-eye-illusion-media "
                       className="tracking-wider hover:bg-gray-200 px-2 py-1 transition-colors"
                     >
                       ALBUM SAMPLES
