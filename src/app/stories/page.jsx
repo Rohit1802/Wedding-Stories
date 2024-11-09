@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
@@ -59,19 +59,26 @@ export default function Stories() {
     <div className="bg-primary p-6">
       {/* Header Section */}
       <div className="text-center mb-8">
-        <hr className="border-t-2 border-gray-300 mx-auto w-2/3 my-4" />
-        <h2 className="text-3xl text-gray-700 font-thin tracking-widest">STORIES</h2>
-        <p className="text-lg font-thin text-gray-400 italic mt-2">
-          Delve deeper into our world of story-telling
-        </p>
-        <hr className="border-t-2 border-gray-300 mx-auto w-2/3 my-4" />
+        <hr className="border-t-1 border-gray-300 mx-auto w-2/3" />
+        <div className="my-12">
+          <h2 className="text-3xl  text-gray-700 font-thin tracking-[.25em]">
+            STORIES
+          </h2>
+          <p className="text-xl font-thin text-gray-400 italic mt-2">
+            Delve deeper into our world of story-telling
+          </p>
+        </div>
+        <hr className="border-t-1 border-gray-300 mx-auto w-2/3" />
       </div>
 
       {/* Card Gallery */}
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-8">
           {currentStories.map((story, index) => (
-            <div key={index} className="overflow-hidden hover:scale-105 hover:rounded-md hover:shadow-lg transition-transform duration-300 ease-in-out">
+            <div
+              key={index}
+              className="overflow-hidden hover:scale-105 hover:rounded-md hover:shadow-lg transition-transform duration-300 ease-in-out"
+            >
               <div className="relative w-full h-60">
                 <Image
                   src={story.imageSrc}
@@ -84,12 +91,30 @@ export default function Stories() {
                 <h3 className="text-xl font-semibold text-center text-gray-800 hover:text-blue-500 transition-colors duration-300">
                   {story.title}
                 </h3>
-                <p className="text-gray-500 my-2 text-center text-lg">{story.subtitle}</p>
-                <p className="text-md text-gray-400 mt-2 text-center sm:text-center">{story.description}</p>
-                <a href={story.link} className="uppercase text-gray-600 flex items-center justify-center mt-4 py-2 px-4 border border-gray-600 rounded-full hover:bg-gray-600 hover:text-white transition duration-300">
+                <p className="text-gray-500 my-2 text-center text-lg">
+                  {story.subtitle}
+                </p>
+                <p className="text-md text-gray-400 mt-2 text-center sm:text-center">
+                  {story.description}
+                </p>
+                <a
+                  href={story.link}
+                  className="uppercase text-gray-600 flex items-center justify-center mt-4 py-2 px-4 border border-gray-600 rounded-full hover:bg-gray-600 hover:text-white transition duration-300"
+                >
                   <span className="mr-2">Read More</span>
-                  <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4v16m8-8H4" />
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="w-5 h-5"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth="2"
+                      d="M12 4v16m8-8H4"
+                    />
                   </svg>
                 </a>
               </div>
