@@ -4,18 +4,15 @@ import { useState } from 'react';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    brideFirstName: '',
-    brideLastName: '',
-    groomFirstName: '',
-    groomLastName: '',
-    weddingDate: '',
-    eventsDetails: '',
-    venue: '',
-    contactNumber: '',
+    name: '',
     email: '',
-    howDidYouHear: '',
-    yourStory: '',
-    yourThoughts: '',
+    phone: '',
+    estimatedGuestCount: '',
+    weddingLocation: '',
+    eventDates: '',
+    eventFlow: '',
+    venue: '',
+    services: '',
   });
 
   const handleChange = (e) => {
@@ -25,150 +22,56 @@ export default function ContactPage() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would typically handle form submission logic
+    // Handle form submission logic (e.g., API request)
     console.log(formData);
   };
 
   return (
-    <div className="container mx-auto p-9 bg-primary">
+    <div className="text-center container mx-auto p-9 bg-primary">
       <hr />
       {/* Contact Us Section */}
-      <h2 className="text-3xl font-semibold text-center mb-4 tracking-wider font-hypatia-sans-pro">
-        Contact Us
-      </h2>
+      <h2 className="text-3xl text-gray-700 py-8 font-thin tracking-[.25em]">CONTACT US</h2>
       <hr />
-      
-      {/* Combined Paragraph Content with limited width */}
-      <p className="font-calluna text-sm text-center mb-9 tracking-normal max-w-3xl mx-auto">
-        We love making films and are honoured to be considered by you to document your wedding story for posterity. This website best showcases our work – every film, every image, and every song here represents who we are and what we stand for. If you would like your wedding story to be filmed by us, grab a cup of coffee and write in every detail you can think of. Tell us your story. This helps us gain insight into your personalities and know you better as people. In fact, some of our best films have started off as chronicles on the keyboard right in front of you. Years later, when you see your films & photographs, not only will you begin to relive the priceless moments of these special days but also see how beautifully and gracefully your love has matured. We would love to curate this film for you as nothing gives us greater pleasure than to make these once-in-a-lifetime films from moments that don’t have a second take.
-      </p>
 
-      <p className="font-calluna text-sm text-center mb-2 tracking-normal max-w-3xl mx-auto">
-        <strong>“Harpreet Bachher”</strong><br />
-        — FOUNDER, THE WEDDING STORY
+      {/* Paragraph Content */}
+      <p className="font-calluna text-sm text-center mb-9 py-3 tracking-normal max-w-3xl mx-auto">
+        <strong>“RAJ KAMAL RAJ”</strong>
+        <br />
+        — FOUNDER, THIRD EYE ILLUSION MEDIA
       </p>
 
       {/* Subtitle */}
       <h3 className="text-lg text-gray-600 text-center mb-4">We'd love to hear your story!</h3>
 
       <p className="font-calluna text-sm text-center mb-6 tracking-normal max-w-3xl mx-auto">
-        Please fill out the form below to get in touch with us.
+        Please fill in the form below and provide as much detail as possible to help us create an accurate quote. We will try to get back to you within 48hrs, or give us a call at the number below if you don’t hear from us or if it's a last-minute enquiry.
+      </p>
+
+      <p className="font-calluna text-sm text-center mb-6 font-bold tracking-normal max-w-3xl mx-auto">
+        Third-eye-illusion-media <br />
+        +91 92637996669 <br />
+        Delhi . Mumbai
       </p>
 
       {/* Contact Form */}
-      <form onSubmit={handleSubmit} className="max-w-3xl mx-auto px-4 space-y-6">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Bride's Name */}
-          <div className="flex flex-col">
-            <label htmlFor="brideFirstName" className="text-sm font-medium">Bride's First Name</label>
+      <div className="max-w-2xl mx-auto  py-6 bg-white shadow-lg rounded-lg">
+        <form onSubmit={handleSubmit} className="space-y-8">
+          {/* Personal Info */}
+          <div className="flex flex-col items-start px-12 ">
+            <label htmlFor="name" className="text-sm font-normal">Your Full Name</label>
             <input
               type="text"
-              id="brideFirstName"
-              name="brideFirstName"
-              value={formData.brideFirstName}
+              id="name"
+            contact
+              value={formData.name}
               onChange={handleChange}
               required
-              className="p-3 border border-gray-300 rounded-md"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="brideLastName" className="text-sm font-medium">Bride's Last Name</label>
-            <input
-              type="text"
-              id="brideLastName"
-              name="brideLastName"
-              value={formData.brideLastName}
-              onChange={handleChange}
-              required
-              className="p-3 border border-gray-300 rounded-md"
+              className="p-2 border border-gray-300 rounded-md w-full max-w-xl mx-auto bg-gray-100"
             />
           </div>
 
-          {/* Groom's Name */}
-          <div className="flex flex-col">
-            <label htmlFor="groomFirstName" className="text-sm font-medium">Groom's First Name</label>
-            <input
-              type="text"
-              id="groomFirstName"
-              name="groomFirstName"
-              value={formData.groomFirstName}
-              onChange={handleChange}
-              required
-              className="p-3 border border-gray-300 rounded-md"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="groomLastName" className="text-sm font-medium">Groom's Last Name</label>
-            <input
-              type="text"
-              id="groomLastName"
-              name="groomLastName"
-              value={formData.groomLastName}
-              onChange={handleChange}
-              required
-              className="p-3 border border-gray-300 rounded-md"
-            />
-          </div>
-
-          {/* Wedding Date */}
-          <div className="flex flex-col">
-            <label htmlFor="weddingDate" className="text-sm font-medium">Wedding Date</label>
-            <input
-              type="date"
-              id="weddingDate"
-              name="weddingDate"
-              value={formData.weddingDate}
-              onChange={handleChange}
-              required
-              className="p-3 border border-gray-300 rounded-md"
-            />
-          </div>
-        </div>
-
-        {/* Event Details */}
-        <div className="flex flex-col">
-          <label htmlFor="eventsDetails" className="text-sm font-medium">Event Details</label>
-          <textarea
-            id="eventsDetails"
-            name="eventsDetails"
-            value={formData.eventsDetails}
-            onChange={handleChange}
-            required
-            className="p-3 border border-gray-300 rounded-md resize-none h-32"
-            rows="4"
-          />
-        </div>
-
-        {/* Venue */}
-        <div className="flex flex-col">
-          <label htmlFor="venue" className="text-sm font-medium">Venue</label>
-          <input
-            type="text"
-            id="venue"
-            name="venue"
-            value={formData.venue}
-            onChange={handleChange}
-            required
-            className="p-3 border border-gray-300 rounded-md"
-          />
-        </div>
-
-        {/* Contact Info */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div className="flex flex-col">
-            <label htmlFor="contactNumber" className="text-sm font-medium">Contact Number</label>
-            <input
-              type="tel"
-              id="contactNumber"
-              name="contactNumber"
-              value={formData.contactNumber}
-              onChange={handleChange}
-              required
-              className="p-3 border border-gray-300 rounded-md"
-            />
-          </div>
-          <div className="flex flex-col">
-            <label htmlFor="email" className="text-sm font-medium">Your Email</label>
+          <div className="flex flex-col items-start px-12">
+            <label htmlFor="email" className="text-sm font-normal">Your Email</label>
             <input
               type="email"
               id="email"
@@ -176,61 +79,113 @@ export default function ContactPage() {
               value={formData.email}
               onChange={handleChange}
               required
-              className="p-3 border border-gray-300 rounded-md"
+              className="p-2 border border-gray-300 rounded-md w-full max-w-xl mx-auto bg-gray-100"
             />
           </div>
-        </div>
 
-        {/* How did you hear about us */}
-        <div className="flex flex-col">
-          <label htmlFor="howDidYouHear" className="text-sm font-medium">How did you hear about us?</label>
-          <select
-            id="howDidYouHear"
-            name="howDidYouHear"
-            value={formData.howDidYouHear}
-            onChange={handleChange}
-            required
-            className="p-3 border border-gray-300 rounded-md"
-          >
-            <option value="">Select</option>
-            <option value="Instagram">Instagram</option>
-            <option value="Friend's Wedding">Friend's Wedding</option>
-            <option value="Magazine">Magazine</option>
-            <option value="Facebook">Facebook</option>
-            <option value="Relative/Friend">Through a relative / friend</option>
-          </select>
-        </div>
+          <div className="flex flex-col items-start px-12">
+            <label htmlFor="phone" className="text-sm font-nomal">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              value={formData.phone}
+              onChange={handleChange}
+              required
+              className="p-2 border border-gray-300 rounded-md w-full max-w-xl mx-auto bg-gray-100"
+            />
+          </div>
 
-        {/* Story */}
-        <div className="flex flex-col">
-          <label htmlFor="yourStory" className="text-sm font-medium">Your Story</label>
-          <textarea
-            id="yourStory"
-            name="yourStory"
-            value={formData.yourStory}
-            onChange={handleChange}
-            required
-            className="p-3 border border-gray-300 rounded-md resize-none h-32"
-            rows="4"
-          />
-        </div>
+          <div className="flex flex-col items-start px-12">
+            <label htmlFor="estimatedGuestCount" className="text-sm font-normal">Estimated Guest Count</label>
+            <input
+              type="number"
+              id="estimatedGuestCount"
+              name="estimatedGuestCount"
+              value={formData.estimatedGuestCount}
+              onChange={handleChange}
+              required
+              className="p-2 border border-gray-300 rounded-md w-full max-w-xl mx-auto bg-gray-100"
+            />
+          </div>
 
-        {/* Thoughts */}
-        <div className="flex flex-col">
-          <label htmlFor="yourThoughts" className="text-sm font-medium">Your Thoughts</label>
-          <textarea
-            id="yourThoughts"
-            name="yourThoughts"
-            value={formData.yourThoughts}
-            onChange={handleChange}
-            required
-            className="p-3 border border-gray-300 rounded-md resize-none h-32"
-            rows="4"
-          />
-        </div>
+          {/* Event Info */}
+          <div className="flex flex-col items-start px-12">
+            <label htmlFor="weddingLocation" className="text-sm font-normal">Location of the Wedding</label>
+            <input
+              type="text"
+              id="weddingLocation"
+              name="weddingLocation"
+              value={formData.weddingLocation}
+              onChange={handleChange}
+              required
+              className="p-2 border border-gray-300 rounded-md w-full max-w-xl mx-auto bg-gray-100"
+            />
+          </div>
 
-        <button type="submit" className="w-full py-3 bg-gray-700 text-white rounded-md hover:bg-gray-900">Submit</button>
-      </form>
+          <div className="flex flex-col items-start px-12">
+            <label htmlFor="eventDates" className="text-sm font-normal">Event Dates</label>
+            <input
+              type="text"
+              id="eventDates"
+              name="eventDates"
+              value={formData.eventDates}
+              onChange={handleChange}
+              required
+              className="p-2 border border-gray-300 rounded-md w-full max-w-xl mx-auto bg-gray-100"
+            />
+          </div>
+
+          <div className="flex flex-col items-start px-12">
+            <label htmlFor="eventFlow" className="text-sm font-normal">Tell Us More About Your Wedding - Event Flow, Venues</label>
+            <textarea
+              id="eventFlow"
+              name="eventFlow"
+              value={formData.eventFlow}
+              onChange={handleChange}
+              required
+              className="p-2 border border-gray-300 rounded-md resize-none h-24 w-full max-w-xl mx-auto bg-gray-100"
+              rows="4"
+            />
+          </div>
+
+          <div className="flex flex-col items-start px-12">
+            <label htmlFor="venue" className="text-sm font-normal">Venue</label>
+            <input
+              type="text"
+              id="venue"
+              name="venue"
+              value={formData.venue}
+              onChange={handleChange}
+              required
+              className="p-2 border border-gray-300 rounded-md w-full max-w-xl mx-auto bg-gray-100"
+            />
+          </div>
+
+          {/* Services */}
+          <div className="flex flex-col items-start px-12">
+            <label htmlFor="services" className="text-sm font-normal">What Services Are You Looking For?</label>
+            <select
+              id="services"
+              name="services"
+              value={formData.services}
+              onChange={handleChange}
+              required
+              className="p-2 border border-gray-300 rounded-md w-full max-w-xl mx-auto bg-gray-100"
+            >
+              <option value="">Select</option>
+              <option value="Photography">Photography</option>
+              <option value="Films">Films</option>
+              <option value="Both">Both Photography and Films</option>
+            </select>
+          </div>
+
+          {/* Submit Button */}
+          <button type="submit" className="w-full py-3 bg-gray-700 text-white rounded-md hover:bg-gray-900">
+            Submit
+          </button>
+        </form>
+      </div>
     </div>
   );
 }
