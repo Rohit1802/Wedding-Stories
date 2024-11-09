@@ -9,7 +9,7 @@ import {
   ChevronDownIcon,
   ChevronRightIcon,
 } from "@heroicons/react/outline";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -95,33 +95,39 @@ const Navbar = () => {
           >
             CONTACT
           </Link>
+            <Link
+                href="/about"
+                className="tracking-wide hover:text-purple-600 transition-colors"
+              >
+                ABOUT
+              </Link>
           <Link
-            href="/get-in-touch"
+            href="/contact"
             className="bg-purple-600 text-white text-sm px-3 py-2 rounded hover:bg-purple-700 transition-colors"
           >
             GET IN TOUCH
           </Link>
           <div className="flex space-x-4">
             <Link
-              href="https://facebook.com"
+              href="https://www.facebook.com/people/Third-eye-illusion-media/100063680210336/"
               target="_blank"
               className="text-gray-500 hover:text-gray-700 transition-colors"
             >
               <FaFacebookF className="w-5 h-5" />
             </Link>
             <Link
-              href="https://instagram.com"
+              href="https://www.instagram.com/third_eye_illusion_media/"
               target="_blank"
               className="text-gray-500 hover:text-gray-700 transition-colors"
             >
               <FaInstagram className="w-5 h-5" />
             </Link>
             <Link
-              href="https://twitter.com"
+              href="https://www.youtube.com/c/ThirdeyeillusionMedia"
               target="_blank"
               className="text-gray-500 hover:text-gray-700 transition-colors"
             >
-              <FaTwitter className="w-5 h-5" />
+              <FaYoutube className="w-5 h-5" />
             </Link>
           </div>
         </div>
@@ -165,8 +171,14 @@ const Navbar = () => {
               >
                 CONTACT
               </Link>
+                <Link
+                href="/about"
+                className="tracking-wide hover:text-purple-600 transition-colors"
+              >
+                ABOUT
+              </Link>
               <Link
-                href="/get-in-touch"
+                href="/contact"
                 className="bg-purple-600 text-white px-3 py-2 rounded hover:bg-purple-700 transition-colors"
               >
                 GET IN TOUCH
@@ -208,25 +220,25 @@ const Navbar = () => {
               </div>
               <div className="flex absolute bottom-8 space-x-6">
                 <Link
-                  href="https://facebook.com"
+                  href="https://www.facebook.com/people/Third-eye-illusion-media/100063680210336/"
                   target="_blank"
                   className="hover:text-purple-600 transition-colors"
                 >
                   <FaFacebookF className="w-6 h-6" />
                 </Link>
                 <Link
-                  href="https://instagram.com"
+                  href="https://www.instagram.com/third_eye_illusion_media/"
                   target="_blank"
                   className="hover:text-purple-600 transition-colors"
                 >
                   <FaInstagram className="w-6 h-6" />
                 </Link>
                 <Link
-                  href="https://twitter.com"
+                  href="https://www.youtube.com/c/ThirdeyeillusionMedia"
                   target="_blank"
                   className="hover:text-purple-600 transition-colors"
                 >
-                  <FaTwitter className="w-6 h-6" />
+                  <FaYoutube className="w-6 h-6" />
                 </Link>
               </div>
             </div>
