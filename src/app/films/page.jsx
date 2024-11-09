@@ -46,6 +46,116 @@ export default function Films() {
               <img
                 src={video.thumbnail}
                 alt="video thumbnail"
+                className={`w-full h-full object-cover group-hover:filter-none transition-all duration-300 ease-in-out  ${playingVideo !== video.id ? "filter grayscale" : ""}`}
+              />
+
+              {/* Play/Pause Button (No black background) */}
+              {playingVideo !== video.id || !isPlaying ? (
+                <button
+                  className="absolute inset-0 flex items-center justify-center text-white text-6xl rounded-full hover:bg-opacity-70 transition"
+                  onClick={() => togglePlayPause(video.id)}
+                >
+                  <PlayIcon className="w-10 h-10" />
+                </button>
+              ) : (
+                <button
+                  className="absolute inset-0 flex items-center justify-center text-white text-6xl rounded-full hover:bg-opacity-70 transition"
+                  onClick={() => togglePlayPause(video.id)}
+                >
+                  <PauseIcon className="w-10 h-10" />
+                </button>
+              )}
+
+              {/* Video iframe (only visible when playing) */}
+              {playingVideo === video.id && isPlaying && (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 rounded-lg"
+                ></iframe>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="text-center my-8">
+        <hr className="border-t-1 border-gray-300 mx-auto w-2/3" />
+        <div className="my-12">
+          <h2 className="text-3xl text-gray-700 font-thin tracking-[.25em]">
+            TRAILERS
+          </h2>
+        </div>
+        <hr className="border-t-1 border-gray-300 mx-auto w-2/3" />
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {videos.map((video, index) => (
+          <div key={index} className="flex justify-center group">
+            <div className="relative w-full max-w-[400px] h-[225px] overflow-hidden shadow-lg bg-white">
+              {/* Thumbnail */}
+              <img
+                src={video.thumbnail}
+                alt="video thumbnail"
+                className={`w-full h-full object-cover group-hover:filter-none transition-all duration-300 ease-in-out`}
+              />
+
+              {/* Play/Pause Button (No black background) */}
+              {playingVideo !== video.id || !isPlaying ? (
+                <button
+                  className="absolute inset-0 flex items-center justify-center text-white text-6xl rounded-full hover:bg-opacity-70 transition"
+                  onClick={() => togglePlayPause(video.id)}
+                >
+                  <PlayIcon className="w-10 h-10" />
+                </button>
+              ) : (
+                <button
+                  className="absolute inset-0 flex items-center justify-center text-white text-6xl rounded-full hover:bg-opacity-70 transition"
+                  onClick={() => togglePlayPause(video.id)}
+                >
+                  <PauseIcon className="w-10 h-10" />
+                </button>
+              )}
+
+              {/* Video iframe (only visible when playing) */}
+              {playingVideo === video.id && isPlaying && (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src={`https://www.youtube.com/embed/${video.id}?autoplay=1`}
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute top-0 left-0 rounded-lg"
+                ></iframe>
+              )}
+            </div>
+          </div>
+        ))}
+      </div>
+
+            <div className="text-center my-8">
+        <hr className="border-t-1 border-gray-300 mx-auto w-2/3" />
+        <div className="my-12">
+          <h2 className="text-3xl text-gray-700 font-thin tracking-[.25em]">
+            COMPILATIONS
+          </h2>
+        </div>
+        <hr className="border-t-1 border-gray-300 mx-auto w-2/3" />
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {videos.map((video, index) => (
+          <div key={index} className="flex justify-center group">
+            <div className="relative w-full max-w-[400px] h-[225px] overflow-hidden shadow-lg bg-white">
+              {/* Thumbnail */}
+              <img
+                src={video.thumbnail}
+                alt="video thumbnail"
                 className={`w-full h-full object-cover group-hover:filter-none transition-all duration-300 ease-in-out ${playingVideo !== video.id ? "filter grayscale" : ""}`}
               />
 
@@ -82,6 +192,7 @@ export default function Films() {
           </div>
         ))}
       </div>
+
     </div>
   );
 }
