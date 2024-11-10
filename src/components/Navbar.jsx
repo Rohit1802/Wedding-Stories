@@ -141,7 +141,7 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="fixed inset-0 bg-gray-800 bg-opacity-75 transition-opacity">
+        <div className="fixed z-10 inset-0 bg-gray-800 bg-opacity-75 transition-opacity">
           <div className="fixed inset-0 bg-primary p-6 transform transition-transform duration-300 ease-in-out w-3/4 max-w-md">
             <button onClick={toggleSidebar} className="text-gray-800">
               <XIcon className="w-6 h-6" />

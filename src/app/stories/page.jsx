@@ -1,5 +1,8 @@
+// "use client" makes this component client-side rendered
 "use client";
+
 import React, { useEffect, useState } from "react";
+import Link from "next/link"; // Import Link for client-side navigation
 import Image from "next/image";
 
 export default function Stories() {
@@ -61,7 +64,7 @@ export default function Stories() {
       <div className="text-center mb-8">
         <hr className="border-t-1 border-gray-300 mx-auto w-2/3" />
         <div className="my-12">
-          <h2 className="text-3xl  text-gray-700 font-thin tracking-[.25em]">
+          <h2 className="text-3xl text-gray-700 font-thin tracking-[.25em]">
             STORIES
           </h2>
           <p className="text-xl font-thin text-gray-400 italic mt-2">
@@ -74,9 +77,9 @@ export default function Stories() {
       {/* Card Gallery */}
       <div className="container mx-auto">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 py-8">
-          {currentStories.map((story, index) => (
+          {currentStories.map((story) => (
             <div
-              key={index}
+              key={story.id}
               className="overflow-hidden hover:scale-105 hover:rounded-md hover:shadow-lg transition-transform duration-300 ease-in-out"
             >
               <div className="relative w-full h-60">
@@ -97,8 +100,8 @@ export default function Stories() {
                 <p className="text-md text-gray-400 mt-2 text-center sm:text-center">
                   {story.description}
                 </p>
-                <a
-                  href={story.link}
+                <Link
+                  href={`/stories/${story.id}`} // This will navigate to the dynamic story detail page
                   className="uppercase text-gray-600 flex items-center justify-center mt-4 py-2 px-4 border border-gray-600 rounded-full hover:bg-gray-600 hover:text-white transition duration-300"
                 >
                   <span className="mr-2">Read More</span>
@@ -106,17 +109,17 @@ export default function Stories() {
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
                     viewBox="0 0 24 24"
-                    stroke-width="1.5"
+                    strokeWidth="1.5"
                     stroke="currentColor"
-                    class="size-6"
+                    className="size-6"
                   >
                     <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
                       d="m8.25 4.5 7.5 7.5-7.5 7.5"
                     />
                   </svg>
-                </a>
+                </Link>
               </div>
             </div>
           ))}

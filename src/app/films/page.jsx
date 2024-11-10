@@ -98,10 +98,10 @@ export default function Films() {
           <div key={index} className="flex justify-center group">
             <div className="relative w-full max-w-[400px] h-[225px] overflow-hidden shadow-lg bg-white">
               {/* Thumbnail */}
-             <img
+              <img
                 src={video.thumbnail}
                 alt="video thumbnail"
-                className={`w-full h-full object-cover group-hover:filter-none transition-all duration-300 ease-in-out  ${playingVideo !== video.id ? "filter grayscale" : ""}`}
+                className={`w-full h-full object-cover group-hover:filter-none transition-all duration-300 ease-in-out`}
               />
 
               {/* Play/Pause Button (No black background) */}
